@@ -1,25 +1,33 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_to_98 - prints all natural numbers from n to 98
  * @n: starting number
+ *
+ * Description: Numbers are separated by comma and space
+ * The first number is n and the last is 98
+ * Numbers are printed in order
  */
 void print_to_98(int n)
 {
-	int i;
-
-	for (i = n; i <= 98; i++)
+	if (n <= 98)
 	{
-		if (i == n)
+		for (; n <= 98; n++)
 		{
-			_putchar('0' + i);
-		}
-		else
-		{
-			_putchar(',');
-			_putchar(' ');
-			_putchar('0' + i);
+			printf("%d", n);
+			if (n != 98)
+				printf(", ");
 		}
 	}
-	_putchar('\n');
+	else
+	{
+		for (; n >= 98; n--)
+		{
+			printf("%d", n);
+			if (n != 98)
+				printf(", ");
+		}
+	}
+	printf("\n");
 }
