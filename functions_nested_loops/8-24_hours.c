@@ -2,6 +2,7 @@
 
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer
+ * Description: prints from 00:00 to 23:59
  */
 void jack_bauer(void)
 {
@@ -11,17 +12,12 @@ void jack_bauer(void)
 	{
 		for (minute = 0; minute < 60; minute++)
 		{
-			if (minute < 10)
-				_putchar('0');
-			_putchar('0' + minute);
-			if (minute < 59)
-			{
-				_putchar(':');
-				if (hour < 23)
-					_putchar(' ');
-			}
-			if (hour < 23 && minute < 59)
-				_putchar('\n');
+			_putchar((hour / 10) + '0');
+			_putchar((hour % 10) + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar((minute % 10) + '0');
+			_putchar('\n');
 		}
 	}
 }
