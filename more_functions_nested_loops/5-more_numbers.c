@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h> /* for write */
 
 /**
  * more_numbers - prints 10 times the numbers, from 0 to 14,followed a new line
@@ -11,8 +12,8 @@ void more_numbers(void)
 	{
 		for (j = 0; j <= 14; j++)
 		{
-			_putchar(j + '0');
+			write(STDOUT_FILENO, &"0123456789"[j], 1);
 		}
-		_putchar('\n');
+		write(STDOUT_FILENO, "\n", 1);
 	}
 }
