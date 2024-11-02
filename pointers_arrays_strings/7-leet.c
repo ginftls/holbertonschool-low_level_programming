@@ -9,17 +9,20 @@
 char *leet(char *s)
 {
 	int i;
-	char *map[] = {"aeotl", "43017"};
+	char *letters = "aAeEoOtTlL";
+	char *numbers = "4433007711";
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		int j;
 
-		for (j = 0; map[0][j] && s[i] != map[0][j]; j++)
+		for (j = 0; letters[j] != '\0'; j++)
 		{
+			if (s[i] == letters[j])
+			{
+				s[i] = numbers[j];
+			}
 		}
-		if (s[i] == map[0][j])
-			s[i] = map[1][j];
 	}
 	return (s);
 }
