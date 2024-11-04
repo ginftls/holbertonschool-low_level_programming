@@ -1,25 +1,26 @@
 #include "main.h"
-#include <stddef.h> /* for NULL definition */
+#include <stddef.h>
 
 /**
- * _strchr Write a function that locates a character in a string.
- * @s: The string to be scanned
- * @accept: The string containing the characters to match
+ * _strchr - Locates a character in a string
+ * @s: The string to search in
+ * @c: The character to look for
  *
- * Return: Number of bytes in initial segment of s consisting of accept bytes
+ * Return:A pointer to the first occurrence of the character c in the string s,
+ * or NULL if the character is not found
  */
-
-char *_strchr(char *s, char c) /* _strchr returns a pointer first occurrence */
+char *_strchr(char *s, char c)
 {
-	char *f = NULL;
-
 	while (*s != '\0')
 	{
 		if (*s == c)
 			return (s);
 		s++;
 	}
-	if (*s == c)
+
+	/* Check for null character if c is '\0' */
+	if (c == '\0')
 		return (s);
-	return (f); /* return NULL explicitly declared as a pointer */
+
+	return (NULL);
 }
