@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stddef.h> /* for NULL definition */
 
-char *_strchr(char *s, char c)
+char *_strchr(char *s, char c) /* _strchr returns a pointer first occurrence */
 {
 	char *f = NULL;
 
