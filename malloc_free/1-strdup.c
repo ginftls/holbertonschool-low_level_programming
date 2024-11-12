@@ -9,33 +9,33 @@
  */
 char *_strdup(char *str)
 {
-    char *dup;
-    unsigned int len = 0;
-    unsigned int i;
+	char *dup;
+	unsigned int len = 0;
+	unsigned int i;
 
-    if (str == NULL)
-    {
-        return (NULL);
-    }
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 
-    /* Calculate the length of the string */
-    while (str[len] != '\0')
-    {
-        len++;
-    }
+	/* Calculate the length of the string */
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
-    /* Allocate memory for the new string (including the null terminator) */
-    dup = malloc(sizeof(char) * (len + 1));
-    if (dup == NULL)
-    {
-        return (NULL);
-    }
+	/* Allocate memory for the new string (including the null terminator) */
+	dup = malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+	{
+		return (NULL);
+	}
 
-    /* Copy the string */
-    for (i = 0; i <= len; i++)
-    {
-        dup[i] = str[i];
-    }
+	/* Copy the string */
+	for (i = 0; i <= len; i++)
+	{
+		dup[i] = str[i];
+	}
 
-    return (dup);
+	return (dup);
 }
