@@ -6,5 +6,6 @@
 char *create_array(unsigned int size, char c);
 void simple_print_buffer(char *buffer, unsigned int size);
 int _putchar(char c);
+char *_strdup(char *str);
 
 #endif /* MAIN_H */
