@@ -2,19 +2,20 @@
 #define DOG_H
 
 /**
- * struct dog - Represents a dog with a name, age, and owner.
- * @name: The name of the dog (string).
- * @age: The age of the dog (float).
- * @owner: The owner of the dog (string).
+ * struct dog - Structure for dog information
+ * @name: Name of the dog
+ * @age: Age of the dog
+ * @owner: Owner of the dog
  *
- *Description:This structure holds information about a dog, including its name,
- * age, and owner.
+ * Description: Stores basic information about a dog
  */
 struct dog
 {
-	char *name;  /**< The name of the dog. */
-	float age;   /**< The age of the dog. */
-	char *owner; /**< The owner of the dog. */
+	char *name;
+	float age;
+	char *owner;
 };
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
 
 #endif /* DOG_H */
