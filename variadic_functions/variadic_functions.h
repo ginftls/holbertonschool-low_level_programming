@@ -3,8 +3,9 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-/* Function prototype for print_strings */
-void print_strings(const char *separator, const unsigned int n, ...);
+int _putchar(char c);
+void print_all(const char * const format, ...);
 
-#endif /* VARIADIC_FUNCTIONS_H */
+#endif
