@@ -1,7 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-#include <stdlib.h>
+#include <stddef.h>
 
 /**
  * struct list_s - singly linked list
@@ -18,10 +18,7 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
-/* Prototype de la fonction print_list */
-size_t print_list(const list_t *h);
-
-/* Prototype de la fonction _putchar */
-int _putchar(char c);
+/* Function prototype for list_len */
+size_t list_len(const list_t *h);
 
 #endif /* LISTS_H */
