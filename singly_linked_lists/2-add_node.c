@@ -1,6 +1,48 @@
 #include "lists.h"
-#include <string.h>
 #include <stdlib.h>
+
+/**
+ * _strlen - Calculates the length of a string
+ * @str: Input string
+ *
+ * Return: Length of the string
+ */
+unsigned int _strlen(const char *str)
+{
+	unsigned int len = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	return (len);
+}
+
+/**
+ * _strdup - Duplicates a string
+ * @str: Input string to duplicate
+ *
+ * Return: Pointer to the duplicated string, or NULL if failed
+ */
+char *_strdup(const char *str)
+{
+	unsigned int len, i;
+	char *dup;
+
+	if (str == NULL)
+		return (NULL);
+
+	len = _strlen(str);
+
+	dup = malloc((len + 1) * sizeof(char));
+	if (dup == NULL)
+		return (NULL);
+
+	for (i = 0; i < len; i++)
+		dup[i] = str[i];
+	dup[i] = '\0';
+
+	return (dup);
+}
 
 /**
  * add_node - Adds a new node at the beginning of a list_t list
@@ -22,7 +64,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	/* Duplicate the string */
-	new_node->str = strdup(str);
+	new_node->str = _strdup(str);
 	if (new_node->str == NULL)
 	{
 		free(new_node);
@@ -30,7 +72,7 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	/* Calculate string length */
-	new_node->len = strlen(str);
+	new_node->len = _strlen(str);
 
 	/* Point the new node to the current head */
 	new_node->next = *head;
